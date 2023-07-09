@@ -1,8 +1,8 @@
 package Vehicles;
 
 public abstract class Vehicle implements IVehicle {
-    protected final String modelName;
-    protected final int wheelsCount;
+    private final String modelName;
+    private final int wheelsCount;
 
     public Vehicle(String modelName, int wheelsCount) {
         this.modelName = modelName;
