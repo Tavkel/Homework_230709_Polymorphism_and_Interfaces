@@ -1,16 +1,16 @@
-import ServiceStations.IServiceStation;
+import ServiceStations.ServiceStation;
 import Vehicles.*;
 
 public class Main {
     public static void main(String[] args) {
-        Car car = new Car("car1", 4);
-        Car car2 = new Car("car2", 4);
+        CarImpl car = new CarImpl("car1", 4);
+        CarImpl car2 = new CarImpl("car2", 4);
 
-        Truck truck = new Truck("truck1", 6);
-        Truck truck2 = new Truck("truck2", 8);
+        TruckImpl truck = new TruckImpl("truck1", 6);
+        TruckImpl truck2 = new TruckImpl("truck2", 8);
 
-        Bicycle bicycle = new Bicycle("bicycle1", 2);
-        Bicycle bicycle2 = new Bicycle("bicycle2", 2);
+        BicycleImpl bicycle = new BicycleImpl("bicycle1", 2);
+        BicycleImpl bicycle2 = new BicycleImpl("bicycle2", 2);
 
         checkVehicle(bicycle);
         checkVehicle(bicycle2);
@@ -22,8 +22,8 @@ public class Main {
         checkVehicle(truck2);
     }
 
-    public static void checkVehicle(IVehicle vehicle) {
-        IServiceStation serviceStation = vehicle.getVehicleType().create();
+    public static void checkVehicle(Vehicle vehicle) {
+        ServiceStation serviceStation = vehicle.getVehicleType().create();
         serviceStation.check(vehicle);
     }
 }

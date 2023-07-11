@@ -5,22 +5,22 @@ import ServiceStations.*;
 public enum Vehicles {
     Bicycle {
         @Override
-        public IServiceStation<IBicycle> create() {
+        public ServiceStation<Bicycle> create() {
             return new ServiceStationBicycle();
         }
     },
     Car {
         @Override
-        public IServiceStation<ICar> create() {
+        public ServiceStation<Car> create() {
             return new ServiceStationCar();
         }
     },
     Truck {
         @Override
-        public IServiceStation<ITruck> create() {
+        public ServiceStation<Truck> create() {
             return new ServiceStationTruck();
         }
     };
 
-    public abstract IServiceStation create();
+    public abstract ServiceStation create();
 }

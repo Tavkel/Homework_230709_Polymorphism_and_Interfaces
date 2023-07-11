@@ -1,23 +1,11 @@
 package Vehicles;
 
-public abstract class Vehicle implements IVehicle {
-    private final String modelName;
-    private final int wheelsCount;
+public interface Vehicle {
+    String getModelName();
 
-    public Vehicle(String modelName, int wheelsCount) {
-        this.modelName = modelName;
-        this.wheelsCount = wheelsCount;
-    }
+    int getWheelsCount();
 
-    public String getModelName() {
-        return modelName;
-    }
+    Vehicles getVehicleType();
 
-    public int getWheelsCount() {
-        return wheelsCount;
-    }
-
-    public void updateTyre() {
-        System.out.println("Меняем покрышку");
-    }
+    void updateTyre();
 }

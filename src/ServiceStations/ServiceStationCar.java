@@ -1,10 +1,10 @@
 package ServiceStations;
 
-import Vehicles.ICar;
+import Vehicles.Car;
 
-public class ServiceStationCar implements IServiceStation<ICar> {
+public class ServiceStationCar implements ServiceStation<Car> {
     @Override
-    public void check(ICar car) {
+    public void check(Car car) {
         ServiceStationActions.checkTyres(car);
         ServiceStationActions.checkEngine(car);
     }
