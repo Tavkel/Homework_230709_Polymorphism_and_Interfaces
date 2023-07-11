@@ -1,29 +1,27 @@
-import ServiceStations.ServiceStation;
-import Vehicles.*;
-
 public class Main {
     public static void main(String[] args) {
-        CarImpl car = new CarImpl("car1", 4);
-        CarImpl car2 = new CarImpl("car2", 4);
+        Car car = new Car("car1", 4);
+        Car car2 = new Car("car2", 4);
 
-        TruckImpl truck = new TruckImpl("truck1", 6);
-        TruckImpl truck2 = new TruckImpl("truck2", 8);
+        Truck truck = new Truck("truck1", 6);
+        Truck truck2 = new Truck("truck2", 8);
 
-        BicycleImpl bicycle = new BicycleImpl("bicycle1", 2);
-        BicycleImpl bicycle2 = new BicycleImpl("bicycle2", 2);
+        Bicycle bicycle = new Bicycle("bicycle1", 2);
+        Bicycle bicycle2 = new Bicycle("bicycle2", 2);
 
-        checkVehicle(bicycle);
-        checkVehicle(bicycle2);
+        ServiceStation serviceStation = new ServiceStationImpl();
 
-        checkVehicle(car);
-        checkVehicle(car2);
+        checkVehicle(serviceStation, bicycle);
+        checkVehicle(serviceStation, bicycle2);
 
-        checkVehicle(truck);
-        checkVehicle(truck2);
+        checkVehicle(serviceStation, car);
+        checkVehicle(serviceStation, car2);
+
+        checkVehicle(serviceStation, truck);
+        checkVehicle(serviceStation, truck2);
     }
 
-    public static void checkVehicle(Vehicle vehicle) {
-        ServiceStation serviceStation = vehicle.getVehicleType().create();
+    public static void checkVehicle(ServiceStation serviceStation, Vehicle vehicle) {
         serviceStation.check(vehicle);
     }
 }
