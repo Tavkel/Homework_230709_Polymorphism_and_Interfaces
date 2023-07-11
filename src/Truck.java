@@ -3,6 +3,7 @@ public class Truck extends Car  {
         super(modelName, wheelsCount);
     }
 
+    @Override
     public void check(){
         super.check();
         checkTrailer();
